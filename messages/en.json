@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "services": "Services",
+    "features": "Why Us",
+    "areas": "Service Areas",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "headline": "Professional Cleaning You Can Trust",
+    "subheadline": "Homes, offices, restaurants, warehouses and more — we clean it all. Available 24/7, 365 days a year.",
+    "badge1": "Free visit & estimate",
+    "badge2": "24/7 service",
+    "cta": "Get a Free Quote"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We clean homes, apartments, offices, restaurants, warehouses, bars, kitchens, and building common areas.",
+    "items": [
+      { "title": "General Cleaning", "description": "Regular maintenance cleaning for any space." },
+      { "title": "Deep Clean", "description": "Thorough top-to-bottom cleaning for a fresh start." },
+      { "title": "Carpet Cleaning", "description": "Professional carpet care to remove dirt and stains." },
+      { "title": "Floor Cleaning", "description": "Wood, concrete, tile and all floor types." },
+      { "title": "Window Cleaning", "description": "Crystal-clear windows inside and out." }
+    ]
+  },
+  "features": {
+    "title": "Why Choose García ProCleaners?",
+    "items": [
+      { "title": "Available 24/7", "description": "We work any day, any time — including weekends and holidays." },
+      { "title": "Free Estimate", "description": "We visit your space at no cost and give you a quote with no strings attached." },
+      { "title": "We Work Within Your Budget", "description": "We design a cleaning plan that fits your needs and your wallet." },
+      { "title": "Trusted Professionals", "description": "Trained, reliable staff who take pride in every job they do." }
+    ]
+  },
+  "promo": {
+    "tag": "Special Offer",
+    "headline": "First floor cleaning is on us.",
+    "body": "Sign up for regular cleaning service and we'll clean your floors — including carpets — for free on the first visit.",
+    "cta": "Claim Your Free Clean"
+  },
+  "areas": {
+    "title": "Areas We Serve",
+    "subtitle": "Proudly serving Central Oregon",
+    "locations": ["Redmond", "Bend", "Prineville", "La Pine", "Sisters", "Terrebonne", "Madras"]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      { "q": "Do you offer free estimates?", "a": "Yes! We visit your space at no charge and give you a detailed quote with no commitment required." },
+      { "q": "Are you really available 24/7?", "a": "Absolutely. We work 7 days a week, including weekends and holidays. Just give us a call." },
+      { "q": "What types of spaces do you clean?", "a": "We clean homes, apartments, offices, restaurants, bars, warehouses, kitchens, and building common areas." },
+      { "q": "What does the free first floor cleaning include?", "a": "When you sign up for a regular cleaning plan, we clean all your floors on the first visit at no extra charge — including carpet cleaning." },
+      { "q": "Can you work with my budget?", "a": "Yes. We'll put together a cleaning plan tailored to your needs and budget. Just tell us what you're looking for." },
+      { "q": "Which areas do you serve?", "a": "We serve Redmond, Bend, Prineville, La Pine, Sisters, Terrebonne, and Madras in Central Oregon." }
+    ]
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Choose how you'd like to reach us",
+    "call": "Call Us",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "features": "Por qué elegirnos",
+    "areas": "Zonas de cobertura",
+    "faq": "Preguntas frecuentes"
+  },
+  "hero": {
+    "headline": "Limpieza profesional en la que podés confiar",
+    "subheadline": "Casas, oficinas, restaurantes, warehouses y más — limpiamos todo. Disponibles las 24 hs, los 365 días del año.",
+    "badge1": "Visita y presupuesto gratis",
+    "badge2": "Servicio 24/7",
+    "cta": "Pedí tu presupuesto gratis"
+  },
+  "services": {
+    "title": "Nuestros servicios",
+    "subtitle": "Limpiamos hogares, departamentos, oficinas, restaurantes, warehouses, bares, cocinas y áreas comunes de edificios.",
+    "items": [
+      { "title": "Limpieza general", "description": "Mantenimiento regular para cualquier tipo de espacio." },
+      { "title": "Deep Clean", "description": "Limpieza profunda de arriba a abajo para un comienzo renovado." },
+      { "title": "Limpieza de alfombras", "description": "Cuidado profesional de alfombras para eliminar suciedad y manchas." },
+      { "title": "Limpieza de pisos", "description": "Madera, concreto, cerámica y todo tipo de pisos." },
+      { "title": "Limpieza de ventanas", "description": "Ventanas cristalinas por dentro y por fuera." }
+    ]
+  },
+  "features": {
+    "title": "¿Por qué elegir García ProCleaners?",
+    "items": [
+      { "title": "Disponibles 24/7", "description": "Trabajamos cualquier día, a cualquier hora — incluyendo fines de semana y feriados." },
+      { "title": "Presupuesto gratis", "description": "Visitamos tu espacio sin cargo y te damos un presupuesto sin ningún compromiso." },
+      { "title": "Nos adaptamos a tu presupuesto", "description": "Diseñamos un plan de limpieza que se ajusta a tus necesidades y posibilidades." },
+      { "title": "Profesionales de confianza", "description": "Personal capacitado y comprometido que se enorgullece de cada trabajo." }
+    ]
+  },
+  "promo": {
+    "tag": "Oferta especial",
+    "headline": "La primera limpieza de pisos es gratis.",
+    "body": "Contratá el servicio de limpieza regular y en la primera visita limpiamos todos tus pisos — incluidas las alfombras — sin costo adicional.",
+    "cta": "Aprovechá la oferta"
+  },
+  "areas": {
+    "title": "Zonas de cobertura",
+    "subtitle": "Trabajamos en el centro de Oregon",
+    "locations": ["Redmond", "Bend", "Prineville", "La Pine", "Sisters", "Terrebonne", "Madras"]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿Hacen presupuesto sin costo?", "a": "Sí. Visitamos tu espacio sin cargo y te damos un presupuesto detallado sin ningún compromiso." },
+      { "q": "¿Realmente trabajan las 24 horas?", "a": "Así es. Trabajamos los 7 días de la semana, incluyendo fines de semana y feriados. Solo llamanos." },
+      { "q": "¿Qué tipos de espacios limpian?", "a": "Limpiamos hogares, departamentos, oficinas, restaurantes, bares, warehouses, cocinas y áreas comunes de edificios." },
+      { "q": "¿Qué incluye la primera limpieza de pisos gratis?", "a": "Al contratar un plan de limpieza regular, en la primera visita limpiamos todos los pisos sin costo adicional — incluyendo alfombras." },
+      { "q": "¿Pueden ajustarse a mi presupuesto?", "a": "Sí. Armamos un plan de limpieza adaptado a tus necesidades y posibilidades económicas." },
+      { "q": "¿En qué zonas trabajan?", "a": "Trabajamos en Redmond, Bend, Prineville, La Pine, Sisters, Terrebonne y Madras, en el centro de Oregon." }
+    ]
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contactanos",
+    "subtitle": "Elegí cómo querés comunicarte",
+    "call": "Llamar",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
+  }
+}

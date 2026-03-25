@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx:*)",
+      "Bash(mv /home/valeria/Documents/FullStackUbuntuHP/garciaprocleaners/PLAN.md /tmp/PLAN.md)",
+      "Bash(mv /home/valeria/Documents/FullStackUbuntuHP/garciaprocleaners/public /tmp/public_backup)",
+      "Bash(mv -f * .* /home/valeria/Documents/FullStackUbuntuHP/garciaprocleaners/)",
+      "Bash(rm -rf /home/valeria/Documents/FullStackUbuntuHP/garciaprocleaners-temp)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(pkill -f \"next build\")",
+      "Bash(pkill -9 -f \"next\")"
+    ]
+  }
+}
