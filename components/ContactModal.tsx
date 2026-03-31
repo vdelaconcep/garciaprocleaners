@@ -46,7 +46,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       />
 
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-sm mx-4 w-full">
+      <div className="relative bg-white rounded-2xl shadow-2xl p-4 sm:p-8 max-w-sm mx-4 w-full ring-4 ring-[#255325]">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -72,7 +72,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               href={method.href}
               target={method.key === 'whatsapp' ? '_blank' : undefined}
               rel={method.key === 'whatsapp' ? 'noopener noreferrer' : undefined}
-              className="flex items-center gap-4 p-4 rounded-xl bg-[#FEF8E8] hover:bg-[#9AC182]/30 transition-colors group"
+              className="flex items-center gap-4 p-4 rounded-xl bg-[#FEF8E8] hover:bg-[#9AC182]/40 transition-colors group"
             >
               <method.icon className="w-6 h-6 text-[#255325]" />
               <div>

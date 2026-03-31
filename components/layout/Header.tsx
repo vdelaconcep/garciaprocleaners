@@ -70,7 +70,7 @@ export function Header({ locale, onContactClick }: HeaderProps) {
               <a
                 key={item.key}
                 href={item.href}
-                className="font-body font-medium text-gray-700 hover:bg-[#9AC182] transition-colors duration-200 p-2 rounded-md"
+                className="font-body font-medium text-gray-700 hover:bg-[#9AC182]/50 transition-colors duration-200 p-2 rounded-md"
               >
                 {t(item.key as keyof typeof t)}
               </a>
