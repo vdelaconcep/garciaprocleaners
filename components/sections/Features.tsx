@@ -22,7 +22,7 @@ export function Features() {
   ]
 
   return (
-    <section id="features" className="py-16 sm:py-24 bg-white">
+    <section id="features" className="py-16 sm:py-24 bg-[#9AC182]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título */}
         <div className="text-center mb-12 sm:mb-16">
@@ -39,7 +39,7 @@ export function Features() {
               <AnimatedCard
                 key={feature.title}
                 delay={i * 100}
-                className="bg-[#FEF8E8] rounded-xl p-6 hover:shadow-md transition-shadow duration-200"
+                className="bg-[#FEF8E8] rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-200"
               >
                 <IconComponent className="w-10 h-10 text-[#255325] mb-4" />
                 <h3 className="font-display text-lg tracking-wider uppercase text-[#4B4E19] mb-2">

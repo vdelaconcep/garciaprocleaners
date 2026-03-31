@@ -46,24 +46,31 @@ export function Header({ locale, onContactClick }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center">
+          <article className='flex flex-row items-center gap-2'>
+            <Link href={`/${locale}`} className="flex items-center">
             <Image
               src="/images/logo.jpg"
               alt="García ProCleaners"
               width={140}
               height={48}
               priority
-              className="h-auto w-28 sm:w-36"
+              className="h-auto w-12 sm:w-15"
             />
-          </Link>
+            </Link>
+            <div className='flex flex-col text-[#255325] font-display'>
+              <h1 className='font-black text-2xl leading-none tracking-wider'>GARCÍA</h1>
+              <h2 className='leading-none'>Pro-Cleaners</h2>
+            </div>
+          </article>
+          
 
           {/* Navegación */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
-                className="font-body font-medium text-gray-700 hover:text-[#255325] transition-colors duration-200"
+                className="font-body font-medium text-gray-700 hover:bg-[#9AC182] transition-colors duration-200 p-2 rounded-md"
               >
                 {t(item.key as keyof typeof t)}
               </a>
@@ -74,14 +81,14 @@ export function Header({ locale, onContactClick }: HeaderProps) {
           <div className="flex items-center gap-4">
             <button
               onClick={toggleLocale}
-              className="font-body font-semibold text-sm text-[#255325] hover:opacity-80 transition-opacity"
+              className="font-body font-semibold text-sm text-[#255325] hover:opacity-70 cursor-pointer transition-opacity"
               aria-label="Toggle language"
             >
               {locale.toUpperCase()}
             </button>
             <button
               onClick={onContactClick}
-              className="hidden sm:block font-body font-semibold text-sm bg-[#255325] text-white px-5 py-2.5 rounded-lg hover:bg-[#1a3d1a] transition-colors duration-200"
+              className="hidden sm:block font-body font-semibold text-sm bg-[#255325] text-white px-5 py-2.5 rounded-full shadow-sm shadow-gray-600 hover:bg-[#1a3d1a] transition-colors duration-200 cursor-pointer"
             >
               {locale === 'en' ? 'Get Quote' : 'Presupuesto'}
             </button>

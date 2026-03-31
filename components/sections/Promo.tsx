@@ -31,7 +31,7 @@ export function Promo({ onContactClick }: PromoProps) {
           {/* CTA */}
           <button
             onClick={onContactClick}
-            className="font-body font-semibold text-base sm:text-lg bg-white text-[#255325] px-8 py-4 rounded-xl hover:bg-[#FEF8E8] transition-all duration-200 hover:scale-105 hover:shadow-lg"
+            className="font-body font-semibold text-base sm:text-lg bg-white text-[#255325] px-8 py-4 rounded-xl hover:bg-[#FEF8E8] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
           >
             {t('cta')}
           </button>

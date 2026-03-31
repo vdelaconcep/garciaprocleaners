@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
-import { Bebas_Neue, DM_Sans } from 'next/font/google'
+import { Raleway, DM_Sans } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import '../globals.css'
 
-const bebasNeue = Bebas_Neue({
-  weight: '400',
+const raleway = Raleway({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
   display: 'swap',
   preload: true,
-  variable: '--font-display',
+  variable: '--font-raleway',
 })
 
 const dmSans = DM_Sans({
@@ -49,7 +49,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className={`${bebasNeue.variable} ${dmSans.variable}`}>
+    <html lang={locale} className={`${raleway.variable} ${dmSans.variable}`}>
       <body className="font-body">
         <NextIntlClientProvider messages={messages}>
           {children}

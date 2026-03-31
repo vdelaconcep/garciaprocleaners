@@ -42,22 +42,26 @@ export function Hero({ onContactClick }: HeroProps) {
             {/* CTA Button */}
             <button
               onClick={onContactClick}
-              className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
             >
               {t('cta')}
             </button>
           </div>
 
           {/* Imagen */}
-          <div className="relative h-[250px] sm:h-[300px] lg:h-[380px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="w-full h-full overflow-hidden flex flex-col items-center justify-center">
             <Image
-              src="/images/hero.jpg"
-              alt="García ProCleaners — professional cleaning service"
-              fill
+              src="/images/logo.jpg"
+              alt="García ProCleaners"
+              width={140}
+              height={48}
               priority
-              sizes="(max-width: 768px) 100vw, 45vw"
-              className="object-cover"
+              className="h-auto w-12 sm:w-80"
             />
+            <div className='flex flex-col text-[#255325] font-display'>
+              <h1 className='text-center font-black text-7xl leading-none tracking-wider'>GARCÍA</h1>
+              <h2 className='text-center font-extrabold text-3xl leading-none tracking-widest'>PRO CLEANERS</h2>
+            </div>
           </div>
         </div>
       </div>
