@@ -35,7 +35,7 @@ export function ContactModal({ isOpen, onClose, phone, email, whatsapp, whatsapp
       key: 'call',
       icon: Phone,
       label: t('call'),
-      value: phone,
+      value: "+"+phone[0]+" ("+phone.slice(1,4)+") "+phone.slice(5),
       href: `tel:${phone.replace(/\D/g, '')}`,
     },
     {

@@ -1,7 +1,7 @@
 // app/[locale]/HomeClient.tsx
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
@@ -13,9 +13,12 @@ import { FAQ } from '@/components/sections/FAQ'
 import { ContactModal } from '@/components/ContactModal'
 import { FloatingButton } from '@/components/FloatingButton'
 
-interface Contact {
+interface SheetData {
     phone: string
     email: string
+    whatsapp: string
+    whatsappMessageEN: string
+    whatsappMessageES: string
 }
 
 interface HomeClientProps {
@@ -27,33 +30,58 @@ interface HomeClientProps {
     whatsappMessageES: string
 }
 
-export function HomeClient({ locale, phone, email, whatsapp, whatsappMessageEN, whatsappMessageES }: HomeClientProps) {
+export function HomeClient({ locale: initialLocale, phone: initialPhone, email: initialEmail, whatsapp: initialWhatsapp, whatsappMessageEN: initialWhatsappMessageEN, whatsappMessageES: initialWhatsappMessageES }: HomeClientProps) {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+    const [sheetData, setSheetData] = useState<SheetData>({
+        phone: initialPhone,
+        email: initialEmail,
+        whatsapp: initialWhatsapp,
+        whatsappMessageEN: initialWhatsappMessageEN,
+        whatsappMessageES: initialWhatsappMessageES,
+    })
+
+    // Fetch fresh data when modal opens
+    useEffect(() => {
+        if (isContactModalOpen) {
+            const fetchData = async () => {
+                try {
+                    const res = await fetch('/api/sheet-data?nocache=' + Date.now())
+                    if (res.ok) {
+                        const data = await res.json()
+                        setSheetData(data)
+                    }
+                } catch (error) {
+                    console.error('Error fetching sheet data:', error)
+                }
+            }
+            fetchData()
+        }
+    }, [isContactModalOpen])
 
     const handleContactClick = () => setIsContactModalOpen(true)
 
     return (
-    <>
-        <Header locale={locale} onContactClick={handleContactClick} />
-        <main>
-            <Hero onContactClick={handleContactClick} />
-            <Services />
-            <Features />
-            <Promo onContactClick={handleContactClick} />
-            <ServiceAreas />
-            <FAQ />
-        </main>
-        <Footer />
-        <ContactModal
-            isOpen={isContactModalOpen}
-            onClose={() => setIsContactModalOpen(false)}
-            phone={phone}
-            email={email}
-            whatsapp={whatsapp}
-            whatsappMessageEN={whatsappMessageEN}
-            whatsappMessageES={whatsappMessageES}
-        />
-        <FloatingButton onClick={handleContactClick} />
+        <>
+            <Header locale={initialLocale} onContactClick={handleContactClick} />
+            <main>
+                <Hero onContactClick={handleContactClick} />
+                <Services />
+                <Features />
+                <Promo onContactClick={handleContactClick} />
+                <ServiceAreas />
+                <FAQ />
+            </main>
+            <Footer />
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+                phone={sheetData.phone}
+                email={sheetData.email}
+                whatsapp={sheetData.whatsapp}
+                whatsappMessageEN={sheetData.whatsappMessageEN}
+                whatsappMessageES={sheetData.whatsappMessageES}
+            />
+            <FloatingButton onClick={handleContactClick} />
         </>
     )
 }
