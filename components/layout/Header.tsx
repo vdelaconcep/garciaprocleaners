@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 interface HeaderProps {
@@ -16,6 +16,8 @@ export function Header({ locale, onContactClick }: HeaderProps) {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuExiting, setIsMenuExiting] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +53,17 @@ export function Header({ locale, onContactClick }: HeaderProps) {
             {/* Mobile burger menu */}
             <button
               className="md:hidden p-2 text-[#255325]"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                if (isMenuOpen) {
+                  setIsMenuExiting(true)
+                  setTimeout(() => {
+                    setIsMenuOpen(false)
+                    setIsMenuExiting(false)
+                  }, 200)
+                } else {
+                  setIsMenuOpen(true)
+                }
+              }}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -124,13 +136,24 @@ export function Header({ locale, onContactClick }: HeaderProps) {
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
+          <div
+            ref={menuRef}
+            className={`md:hidden bg-white border-t border-gray-100 shadow-lg ${
+              isMenuExiting ? 'menu-dropdown-exit' : 'menu-dropdown-enter'
+            }`}
+          >
             <nav className="flex flex-col px-4 py-4 gap-2">
               {navItems.map((item) => (
                 <a
                   key={item.key}
                   href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuExiting(true)
+                    setTimeout(() => {
+                      setIsMenuOpen(false)
+                      setIsMenuExiting(false)
+                    }, 200)
+                  }}
                   className="font-body font-medium text-gray-700 hover:bg-[#9AC182]/50 transition-colors duration-200 p-3 rounded-md"
                 >
                   {t(item.key as keyof typeof t)}
@@ -138,21 +161,16 @@ export function Header({ locale, onContactClick }: HeaderProps) {
               ))}
               <button
                 onClick={() => {
-                  setIsMenuOpen(false)
-                  onContactClick()
+                  setIsMenuExiting(true)
+                  setTimeout(() => {
+                    setIsMenuOpen(false)
+                    setIsMenuExiting(false)
+                    onContactClick()
+                  }, 200)
                 }}
                 className="font-body font-semibold text-sm bg-[#255325] text-white px-5 py-3 rounded-full shadow-sm shadow-gray-600 hover:bg-[#1a3d1a] transition-colors duration-200 cursor-pointer mt-2"
               >
                 {locale === 'en' ? 'Get Quote' : 'Presupuesto'}
-              </button>
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false)
-                  toggleLocale()
-                }}
-                className="font-body font-semibold text-sm text-[#255325] hover:opacity-70 cursor-pointer transition-opacity p-3"
-              >
-                {locale.toUpperCase()}
               </button>
             </nav>
           </div>
