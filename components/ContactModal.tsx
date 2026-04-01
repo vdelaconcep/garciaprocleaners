@@ -1,39 +1,56 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { X, Phone, MessageCircle, Mail } from 'lucide-react'
+import { X, Phone, MessageCircle, Mail, LucideIcon } from 'lucide-react'
+import { useParams } from 'next/navigation'
+
+interface ContactMethod {
+  key: string
+  icon: LucideIcon
+  label: string
+  value: string
+  href: string
+}
 
 interface ContactModalProps {
   isOpen: boolean
   onClose: () => void
+  phone: string
+  email: string
+  whatsapp: string
+  whatsappMessageEN: string
+  whatsappMessageES: string
 }
 
-export function ContactModal({ isOpen, onClose }: ContactModalProps) {
+
+
+export function ContactModal({ isOpen, onClose, phone, email, whatsapp, whatsappMessageEN, whatsappMessageES }: ContactModalProps) {
   const t = useTranslations('contact')
+  const { locale } = useParams()
 
   if (!isOpen) return null
 
-  const contactMethods = [
+  const contactMethods: ContactMethod[] = [
     {
       key: 'call',
       icon: Phone,
       label: t('call'),
-      value: '+1 (541) 771-6828',
-      href: 'tel:+15417716828',
+      value: phone,
+      href: `tel:${phone.replace(/\D/g, '')}`,
     },
     {
       key: 'whatsapp',
       icon: MessageCircle,
       label: t('whatsapp'),
       value: 'WhatsApp',
-      href: 'https://wa.me/15417716828',
+      href: `https://wa.me/${whatsapp}?text=${encodeURIComponent(locale === 'es' ? whatsappMessageES : whatsappMessageEN)}`,
     },
     {
       key: 'email',
       icon: Mail,
       label: t('email'),
-      value: 'contact@garciaprocleaners.com',
-      href: 'mailto:contact@garciaprocleaners.com',
+      value: email,
+      href: `mailto:${email}`,
     },
   ]
 
@@ -66,23 +83,26 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
         {/* Contact options */}
         <div className="space-y-3">
-          {contactMethods.map((method) => (
-            <a
-              key={method.key}
-              href={method.href}
-              target={method.key === 'whatsapp' ? '_blank' : undefined}
-              rel={method.key === 'whatsapp' ? 'noopener noreferrer' : undefined}
-              className="flex items-center gap-4 p-4 rounded-xl bg-[#FEF8E8] hover:bg-[#9AC182]/40 ring-1 ring-[#4B4E19] transition-colors group"
-            >
-              <method.icon className="w-6 h-6 text-[#255325]" />
-              <div>
-                <p className="font-body font-medium text-[#4B4E19]">{method.label}</p>
-                <p className="font-body text-sm text-gray-600 group-hover:text-[#255325] transition-colors">
-                  {method.value}
-                </p>
-              </div>
-            </a>
-          ))}
+          {contactMethods.map((method) => {
+            const Icon = method.icon
+            return (
+              <a
+                key={method.key}
+                href={method.href}
+                target={method.key === 'whatsapp' ? '_blank' : undefined}
+                rel={method.key === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                className="flex items-center gap-4 p-4 rounded-xl bg-[#FEF8E8] hover:bg-[#9AC182]/40 ring-1 ring-[#4B4E19] transition-colors group"
+              >
+                <Icon className="w-6 h-6 text-[#255325]" />
+                <div>
+                  <p className="font-body font-medium text-[#4B4E19]">{method.label}</p>
+                  <p className="font-body text-sm text-gray-600 group-hover:text-[#255325] transition-colors">
+                    {method.value}
+                  </p>
+                </div>
+              </a>
+            )
+          })}
         </div>
       </div>
     </div>

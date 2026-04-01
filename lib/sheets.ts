@@ -13,8 +13,16 @@ export async function getSheetData() {
 
     const response = await sheets.spreadsheets.values.get({
         spreadsheetId: process.env.GOOGLE_SHEETS_ID,
-        range: 'Hoja1!B5:D10',
-    })
+        range: 'Hoja 1!B5:D10',
+    });
 
-    return response.data.values
+    const rows = response.data.values ?? []
+
+    return {
+        phone: rows[0]?.[1],
+        whatsapp: rows[1]?.[1],
+        email: rows[2]?.[1],
+        whatsappMessageEN: rows[5]?.[1],
+        whatsappMessageES: rows[5]?.[2]
+    }
 }
