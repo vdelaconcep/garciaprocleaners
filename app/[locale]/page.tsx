@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, use } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
@@ -13,11 +13,9 @@ import { ContactModal } from '@/components/ContactModal'
 import { FloatingButton } from '@/components/FloatingButton'
 
 export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const resolvedParams = use(params)
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-  const [locale, setLocale] = useState('en')
-
-  // Get locale from params when available
-  Promise.resolve(params).then(p => setLocale(p.locale))
+  const locale = resolvedParams.locale
 
   const handleContactClick = () => {
     setIsContactModalOpen(true)

@@ -18,7 +18,7 @@ export function Hero({ onContactClick }: HeroProps) {
           {/* Contenido de texto */}
           <div className="space-y-6">
             {/* Badges */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <span className="inline-flex items-center gap-2 font-body font-medium text-sm bg-[#9AC182]/30 text-[#255325] px-4 py-2 rounded-full">
                 <CalendarClock className="w-4 h-4" />
                 {t('badge1')}
@@ -30,26 +30,26 @@ export function Hero({ onContactClick }: HeroProps) {
             </div>
 
             {/* Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-wider uppercase text-[#4B4E19] leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-wider uppercase text-[#4B4E19] leading-tight animate-slide-up" style={{ animationDelay: '0.2s' }}>
               {t('headline')}
             </h1>
 
             {/* Subtítulo */}
-            <p className="font-body font-light text-lg sm:text-xl text-gray-700 max-w-xl">
+            <p className="font-body font-light text-lg sm:text-xl text-gray-700 max-w-xl animate-slide-up" style={{ animationDelay: '0.4s' }}>
               {t('subheadline')}
             </p>
 
             {/* CTA Button */}
             <button
               onClick={onContactClick}
-              className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
+              className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer animate-slide-up" style={{ animationDelay: '0.6s' }}
             >
               {t('cta')}
             </button>
           </div>
 
           {/* Imagen */}
-          <div className="w-full h-full overflow-hidden flex flex-col items-center justify-center">
+          <div className="w-full h-full overflow-hidden flex flex-col items-center justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <Image
               src="/images/logo.jpg"
               alt="García ProCleaners"
@@ -59,8 +59,8 @@ export function Hero({ onContactClick }: HeroProps) {
               className="h-auto w-12 sm:w-80"
             />
             <div className='flex flex-col text-[#255325] font-display'>
-              <h1 className='text-center font-black text-7xl leading-none tracking-wider'>GARCÍA</h1>
-              <h2 className='text-center font-extrabold text-3xl leading-none tracking-widest'>PRO CLEANERS</h2>
+              <h1 className='text-center font-black text-7xl leading-none tracking-widest'>GARCÍA</h1>
+              <h2 className='text-center font-extrabold text-4xl leading-none tracking-widest'>PRO CLEANERS</h2>
             </div>
           </div>
         </div>

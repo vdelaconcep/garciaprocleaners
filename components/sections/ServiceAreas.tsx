@@ -25,7 +25,7 @@ export function ServiceAreas() {
             <AnimatedCard
               key={location}
               delay={i * 50}
-              className="flex items-center gap-2 bg-[#FEF8E8] ring-1 ring-[#ebe0c2] px-5 py-3 rounded-full hover:bg-[#9AC182]/30 transition-colors duration-200 shadow-md shadow-gray-300"
+              className="flex items-center gap-2 bg-[#9AC182]/30 ring-1 ring-[#82a26e] px-5 py-3 rounded-full shadow-md shadow-gray-300"
             >
               <MapPin className="w-4 h-4 text-[#255325]" />
               <span className="font-body font-medium text-[#4B4E19]">{location}</span>

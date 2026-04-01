@@ -24,6 +24,10 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'García ProCleaners | Professional Cleaning Services',
   description: 'Professional cleaning services in Central Oregon. Homes, offices, restaurants, warehouses and more. Available 24/7, 365 days a year.',
+  icons: {
+    icon: '/images/logo.jpg',
+    apple: '/images/logo.jpg',
+  },
 }
 
 export const viewport = {
@@ -49,8 +53,8 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className={`${raleway.variable} ${dmSans.variable}`}>
-      <body className="font-body">
+    <html lang={locale} suppressHydrationWarning>
+      <body className={`${raleway.variable} ${dmSans.variable}`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

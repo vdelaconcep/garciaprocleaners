@@ -24,7 +24,7 @@ export function FAQ() {
           {items.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm shadow-gray-300 overflow-hidden"
+              className="bg-white rounded-xl shadow-sm shadow-gray-400 overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
