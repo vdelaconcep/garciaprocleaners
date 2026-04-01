@@ -39,7 +39,7 @@ export function Features() {
               <AnimatedCard
                 key={feature.title}
                 delay={i * 100}
-                className="bg-[#FEF8E8] rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-200"
+                className="bg-[#FEF8E8] rounded-xl p-6 shadow-md shadow-gray-400 hover:shadow-xl transition-shadow duration-200"
               >
                 <IconComponent className="w-10 h-10 text-[#255325] mb-4" />
                 <h3 className="font-display text-lg tracking-wider uppercase text-[#4B4E19] mb-2">

@@ -72,7 +72,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               href={method.href}
               target={method.key === 'whatsapp' ? '_blank' : undefined}
               rel={method.key === 'whatsapp' ? 'noopener noreferrer' : undefined}
-              className="flex items-center gap-4 p-4 rounded-xl bg-[#FEF8E8] hover:bg-[#9AC182]/40 transition-colors group"
+              className="flex items-center gap-4 p-4 rounded-xl bg-[#FEF8E8] hover:bg-[#9AC182]/40 ring-1 ring-[#4B4E19] transition-colors group"
             >
               <method.icon className="w-6 h-6 text-[#255325]" />
               <div>

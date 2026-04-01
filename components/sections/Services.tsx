@@ -44,7 +44,7 @@ export function Services() {
               <AnimatedCard
                 key={service.title}
                 delay={i * 100}
-                className="bg-white rounded-xl shadow-md shadow-gray-300 p-6 hover:shadow-lg transition-shadow duration-200"
+                className="bg-[#9AC182]/30 rounded-xl ring-1 ring-[#4B4E19] shadow-md shadow-gray-400 p-6 hover:shadow-lg transition-shadow duration-200"
               >
                 <IconComponent className="w-8 h-8 text-[#255325] mb-3" />
                 <h3 className="font-display text-xl tracking-wider uppercase text-[#4B4E19] mb-2">
