@@ -12,7 +12,7 @@ export function Hero({ onContactClick }: HeroProps) {
   const t = useTranslations('hero')
 
   return (
-    <section className="relative min-h-screen flex items-center bg-[#FEF8E8] pt-20">
+    <section className="relative min-h-screen flex items-center bg-[#FEF8E8] pt-10 sm:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Contenido de texto */}
@@ -49,7 +49,7 @@ export function Hero({ onContactClick }: HeroProps) {
           </div>
 
           {/* Imagen */}
-          <div className="w-full h-full overflow-hidden flex flex-col items-center justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="w-full h-full overflow-hidden flex-col items-center justify-center animate-fade-in hidden sm:flex" style={{ animationDelay: '0.3s' }}>
             <Image
               src="/images/logo.jpg"
               alt="García ProCleaners"

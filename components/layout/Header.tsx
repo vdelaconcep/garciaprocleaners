@@ -46,13 +46,12 @@ export function Header({ locale, onContactClick }: HeaderProps) {
         isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo / Burger Menu */}
-          <div className="flex items-center gap-2">
-            {/* Mobile burger menu */}
+          {/* Mobile: Burger Menu */}
+          <div className="md:hidden flex items-center">
             <button
-              className="md:hidden p-2 text-[#255325]"
+              className="p-2 text-[#255325] transition-colors duration-200"
               onClick={() => {
                 if (isMenuOpen) {
                   setIsMenuExiting(true)
@@ -76,34 +75,27 @@ export function Header({ locale, onContactClick }: HeaderProps) {
                 </svg>
               )}
             </button>
-
-            {/* Mobile logo text */}
-            <Link href={`/${locale}`} className="md:hidden flex flex-col text-[#255325] font-display">
-              <span className='font-black text-lg leading-none tracking-wider'>GARCÍA</span>
-              <span className='text-xs leading-none'>Pro-Cleaners</span>
-            </Link>
-
-            {/* Desktop logo */}
-            <Link href={`/${locale}`} className="hidden md:flex items-center">
-              <article className='flex flex-row items-center gap-2'>
-                <Image
-                  src="/images/logo.jpg"
-                  alt="García ProCleaners"
-                  width={140}
-                  height={48}
-                  priority
-                  className="h-auto w-12 sm:w-15"
-                />
-                <div className='flex flex-col text-[#255325] font-display'>
-                  <h1 className='font-black text-3xl leading-none tracking-wider'>GARCÍA</h1>
-                  <h2 className='font-extrabold leading-none'>PRO CLEANERS</h2>
-                </div>
-              </article>
-            </Link>
           </div>
 
+          {/* Logo - Centered on mobile */}
+          <Link href={`/${locale}`} className="flex items-center absolute left-1/2 -translate-x-1/2 md:relative md:translate-x-0 md:left-0">
+            <article className='flex flex-row items-center gap-2'>
+              <Image
+                src="/images/logo.jpg"
+                alt="García ProCleaners"
+                width={140}
+                height={48}
+                priority
+                className="h-auto w-10 sm:w-15"
+              />
+              <div className='flex flex-col text-[#255325] font-display'>
+                <h1 className='font-black text-2xl sm:text-3xl leading-none tracking-wider'>GARCÍA</h1>
+                <h2 className='font-extrabold leading-none text-[13px] sm:text-md'>PRO CLEANERS</h2>
+              </div>
+            </article>
+          </Link>
 
-          {/* Navegación */}
+          {/* Desktop Navegación */}
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <a
