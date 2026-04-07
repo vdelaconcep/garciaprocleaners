@@ -18,6 +18,7 @@ export function Header({ locale, onContactClick }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuExiting, setIsMenuExiting] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const burgerRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,26 @@ export function Header({ locale, onContactClick }: HeaderProps) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        menuRef.current && !menuRef.current.contains(e.target as Node) &&
+        burgerRef.current && !burgerRef.current.contains(e.target as Node)
+      ) {
+        setIsMenuExiting(true)
+        setTimeout(() => {
+          setIsMenuOpen(false)
+          setIsMenuExiting(false)
+        }, 200)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isMenuOpen])
 
   const navItems = [
     { key: 'services', href: '#services' },
@@ -40,29 +61,36 @@ export function Header({ locale, onContactClick }: HeaderProps) {
     window.location.href = `/${newLocale}${currentPath || '/'}`
   }
 
+  const closeMenu = () => {
+    setIsMenuExiting(true)
+    setTimeout(() => {
+      setIsMenuOpen(false)
+      setIsMenuExiting(false)
+    }, 200)
+  }
+
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      closeMenu()
+    } else {
+      setIsMenuOpen(true)
+    }
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-gray-400 shadow-sm' : 'bg-transparent'
       }`}
     >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Mobile: Burger Menu */}
           <div className="md:hidden flex items-center">
             <button
+              ref={burgerRef}
               className="p-2 text-[#255325] transition-colors duration-200"
-              onClick={() => {
-                if (isMenuOpen) {
-                  setIsMenuExiting(true)
-                  setTimeout(() => {
-                    setIsMenuOpen(false)
-                    setIsMenuExiting(false)
-                  }, 200)
-                } else {
-                  setIsMenuOpen(true)
-                }
-              }}
+              onClick={toggleMenu}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -139,31 +167,12 @@ export function Header({ locale, onContactClick }: HeaderProps) {
                 <a
                   key={item.key}
                   href={item.href}
-                  onClick={() => {
-                    setIsMenuExiting(true)
-                    setTimeout(() => {
-                      setIsMenuOpen(false)
-                      setIsMenuExiting(false)
-                    }, 200)
-                  }}
+                  onClick={closeMenu}
                   className="font-body font-medium text-gray-700 hover:bg-[#9AC182]/50 transition-colors duration-200 p-3 rounded-md"
                 >
                   {t(item.key as keyof typeof t)}
                 </a>
               ))}
-              <button
-                onClick={() => {
-                  setIsMenuExiting(true)
-                  setTimeout(() => {
-                    setIsMenuOpen(false)
-                    setIsMenuExiting(false)
-                    onContactClick()
-                  }, 200)
-                }}
-                className="font-body font-semibold text-sm bg-[#255325] text-white px-5 py-3 rounded-full shadow-sm shadow-gray-600 hover:bg-[#1a3d1a] transition-colors duration-200 cursor-pointer mt-2"
-              >
-                {locale === 'en' ? 'Get Quote' : 'Presupuesto'}
-              </button>
             </nav>
           </div>
         )}
