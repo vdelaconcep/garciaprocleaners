@@ -12,11 +12,11 @@ export function Hero({ onContactClick }: HeroProps) {
   const t = useTranslations('hero')
 
   return (
-    <section className="relative min-h-screen flex items-center bg-[#FEF8E8] pt-10 sm:pt-20">
+    <section id="heroSection" className="relative min-h-screen flex items-center bg-[#FEF8E8] pt-10 sm:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Contenido de texto */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col">
             {/* Badges */}
             <div className="flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <span className="inline-flex items-center gap-2 font-body font-medium text-sm bg-[#9AC182]/30 text-[#255325] px-4 py-2 rounded-full">
@@ -40,12 +40,14 @@ export function Hero({ onContactClick }: HeroProps) {
             </p>
 
             {/* CTA Button */}
-            <button
-              onClick={onContactClick}
-              className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer animate-slide-up" style={{ animationDelay: '0.6s' }}
-            >
-              {t('cta')}
-            </button>
+            <div className="flex justify-center sm:justify-start animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <button
+                onClick={onContactClick}
+                className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
+              >
+                {t('cta')}
+              </button>
+            </div>
           </div>
 
           {/* Imagen */}

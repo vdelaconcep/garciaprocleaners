@@ -63,13 +63,14 @@ export function HomeClient({ locale: initialLocale, phone: initialPhone, email: 
     return (
         <>
             <Header locale={initialLocale} onContactClick={handleContactClick} />
-            <main>
+            <main className='relative'>
                 <Hero onContactClick={handleContactClick} />
                 <Services />
                 <Features />
                 <Promo onContactClick={handleContactClick} />
                 <ServiceAreas />
                 <FAQ />
+                <FloatingButton onClick={handleContactClick} />
             </main>
             <Footer />
             <ContactModal
@@ -81,7 +82,7 @@ export function HomeClient({ locale: initialLocale, phone: initialPhone, email: 
                 whatsappMessageEN={sheetData.whatsappMessageEN}
                 whatsappMessageES={sheetData.whatsappMessageES}
             />
-            <FloatingButton onClick={handleContactClick} />
+            
         </>
     )
 }

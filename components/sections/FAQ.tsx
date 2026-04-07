@@ -10,7 +10,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-[#fbf4e0]">
+    <section id="faq" className="pt-16 pb-20 sm:py-24 bg-[#fbf4e0]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-12 sm:mb-16">
