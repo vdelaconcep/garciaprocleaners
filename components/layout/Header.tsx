@@ -118,7 +118,7 @@ export function Header({ locale, onContactClick }: HeaderProps) {
               />
               <div className='flex flex-col text-[#255325] font-display'>
                 <h1 className='font-black text-2xl sm:text-3xl leading-none tracking-wider'>GARCÍA</h1>
-                <h2 className='font-extrabold leading-none text-[13px] sm:text-md'>PRO CLEANERS</h2>
+                <h2 className='font-extrabold leading-none text-[13px] sm:text-[16px]'>PRO CLEANERS</h2>
               </div>
             </article>
           </Link>
