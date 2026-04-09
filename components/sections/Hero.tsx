@@ -12,11 +12,11 @@ export function Hero({ onContactClick }: HeroProps) {
   const t = useTranslations('hero')
 
   return (
-    <section id="heroSection" className="relative min-h-[calc(100vh-60px)] flex items-center bg-[#FEF8E8] pt-10 sm:pt-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="heroSection" className="relative min-h-[calc(100vh-60px)] flex items-stretch sm:items-center bg-[#FEF8E8] pt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 flex sm:block items-center sm:items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full sm:h-auto sm:max-h-none max-h-175">
           {/* Contenido de texto */}
-          <div className="space-y-6 flex flex-col">
+          <div className="space-y-6 flex flex-col justify-between h-full">
             {/* Badges */}
             <div className="flex flex-wrap gap-3 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <span className="inline-flex items-center gap-2 font-body font-medium text-sm bg-[#9AC182]/30 text-[#255325] px-4 py-2 rounded-full">
@@ -40,10 +40,10 @@ export function Hero({ onContactClick }: HeroProps) {
             </p>
 
             {/* CTA Button */}
-            <div className="flex justify-center sm:justify-start animate-slide-up" style={{ animationDelay: '0.6s' }}>
+            <div className="flex animate-slide-up" style={{ animationDelay: '0.6s' }}>
               <button
                 onClick={onContactClick}
-                className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer"
+                className="font-body font-semibold text-base sm:text-lg bg-[#255325] text-white px-8 py-4 rounded-xl hover:bg-[#1a3d1a] transition-all duration-200 hover:scale-105 hover:shadow-lg cursor-pointer w-full sm:w-auto"
               >
                 {t('cta')}
               </button>
