@@ -12,7 +12,7 @@ export function Hero({ onContactClick }: HeroProps) {
   const t = useTranslations('hero')
 
   return (
-    <section id="heroSection" className="relative min-h-[calc(100vh-60px)] flex items-stretch sm:items-center bg-[#FEF8E8] pt-10">
+    <section id="heroSection" className="relative min-h-screen flex items-stretch sm:items-center bg-[#FEF8E8] pt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 flex sm:block items-center sm:items-start">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center h-full sm:h-auto sm:max-h-none max-h-175">
           {/* Contenido de texto */}

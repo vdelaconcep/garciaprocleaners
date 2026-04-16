@@ -6,11 +6,11 @@
     "faq": "Preguntas frecuentes"
   },
   "hero": {
-    "headline": "Limpieza profesional en la que podés confiar",
+    "headline": "Limpieza profesional en la que puedes confiar",
     "subheadline": "Casas, oficinas, restaurantes, warehouses y más — limpiamos todo. Disponibles las 24 hs, los 365 días del año.",
     "badge1": "Visita y presupuesto gratis",
     "badge2": "Servicio 24/7",
-    "cta": "Pedí tu presupuesto gratis"
+    "cta": "Pide tu presupuesto gratis"
   },
   "services": {
     "title": "Nuestros servicios",
@@ -35,8 +35,8 @@
   "promo": {
     "tag": "Oferta especial",
     "headline": "La primera limpieza de pisos es gratis.",
-    "body": "Contratá el servicio de limpieza regular y en la primera visita limpiamos todos tus pisos — incluidas las alfombras — sin costo adicional.",
-    "cta": "Aprovechá la oferta"
+    "body": "Contrata el servicio de limpieza regular y en la primera visita limpiamos todos tus pisos — incluidas las alfombras — sin costo adicional.",
+    "cta": "Aprovecha la oferta"
   },
   "areas": {
     "title": "Zonas de cobertura",
@@ -47,7 +47,7 @@
     "title": "Preguntas frecuentes",
     "items": [
       { "q": "¿Hacen presupuesto sin costo?", "a": "Sí. Visitamos tu espacio sin cargo y te damos un presupuesto detallado sin ningún compromiso." },
-      { "q": "¿Realmente trabajan las 24 horas?", "a": "Así es. Trabajamos los 7 días de la semana, incluyendo fines de semana y feriados. Solo llamanos." },
+      { "q": "¿Realmente trabajan las 24 horas?", "a": "Así es. Trabajamos los 7 días de la semana, incluyendo fines de semana y feriados. Solo llámanos." },
       { "q": "¿Qué tipos de espacios limpian?", "a": "Limpiamos hogares, departamentos, oficinas, restaurantes, bares, warehouses, cocinas y áreas comunes de edificios." },
       { "q": "¿Qué incluye la primera limpieza de pisos gratis?", "a": "Al contratar un plan de limpieza regular, en la primera visita limpiamos todos los pisos sin costo adicional — incluyendo alfombras." },
       { "q": "¿Pueden ajustarse a mi presupuesto?", "a": "Sí. Armamos un plan de limpieza adaptado a tus necesidades y posibilidades económicas." },
@@ -58,8 +58,8 @@
     "rights": "Todos los derechos reservados."
   },
   "contact": {
-    "title": "Contactanos",
-    "subtitle": "Elegí cómo querés comunicarte",
+    "title": "Contáctanos",
+    "subtitle": "Elige cómo quieres comunicarte",
     "call": "Llamar",
     "whatsapp": "WhatsApp",
     "email": "Email"
